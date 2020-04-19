@@ -7,6 +7,7 @@ def predict(name=""):
     if name != "":
         # Requests data from page
         res = requests.get("https://api.nationalize.io/?name={}".format(name))
+        status_code = res.status_code
         
         name = res.json()["name"]
         countries = res.json()["country"]
@@ -33,9 +34,10 @@ def predict(name=""):
             'countries': countries
         }
 
-        data = json.dumps(data, indent=4, ensure_ascii=False)
-
-        return data
-        
+        if status_code == 422:
+            raise ValueError("Invalid name.")
+        elif status_code == 200:
+            return json.dumps(data, indent=4, ensure_ascii=False)
+         
     else:
-        raise ValueError("Missing 'name' parameter.")
+        raise ValueError("Name is not defined.")

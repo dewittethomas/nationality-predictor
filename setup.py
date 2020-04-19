@@ -8,7 +8,7 @@ setuptools.setup(
     author_email="thomasdewittecontact@gmail.com",
 
     name='nationality_predictor',
-    version='1.0.0',
+    version='1.0.1',
     license="MIT",
     url='https://github.com/dewittethomas/nationality_predictor',
     python_requires='>= 3.5',
@@ -18,7 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
 
     package_dir={"nationality_predictor": "nationality_predictor"},
-    install_requires=["requests>=2.22.0"],
+    install_requires=["requests>=2.22.0", "pycountry>=19.8.18"],
     
     packages=setuptools.find_packages(),
 
