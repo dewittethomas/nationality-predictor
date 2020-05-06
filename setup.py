@@ -8,7 +8,7 @@ setuptools.setup(
     author_email="thomasdewittecontact@gmail.com",
 
     name='nationality_predictor',
-    version='1.0.1',
+    version='1.1.0',
     license="MIT",
     url='https://github.com/dewittethomas/nationality_predictor',
     python_requires='>= 3.5',
